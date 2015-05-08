@@ -44,18 +44,18 @@ class LSD:
     def __init__(self):
         
         ## Integration parameters
-        self.tf       = 10.
-        self.np1      = 1000
+        self.tf       = 20.
+        self.np1      = 10
         self.t        = np.linspace(0, self.tf, int(self.tf)*self.np1)
         
         ## Plotting region
-        self.xlim_m   = -3.
-        self.xlim_p   = 3.
+        self.xlim_m   = -3.5
+        self.xlim_p   = 3.5
         self.ylim_m   = -3.
         self.ylim_p   = 3.
         
         ## Animation interval
-        self.interval = 0.1
+        self.interval = 1.
         
         return
         
@@ -70,6 +70,31 @@ class LSD:
         y2 = soln[:,1]
         
         return y1, y2
+    
+    
+    def filterSolution(self):
+        
+        epsilon = 1.
+        
+        # Filtering y1
+        y1 = self.y1[ self.y1 > self.xlim_m - epsilon ]
+        y2 = self.y2[ self.y1 > self.xlim_m - epsilon ]
+        
+        y1 = y1[ y1 < self.xlim_p + epsilon ]
+        y2 = y2[ y1 < self.xlim_p + epsilon ]
+        
+        # Filtering y2
+        y1 = y1[ y2 > self.ylim_m - epsilon ]
+        y2 = y2[ y2 > self.ylim_m - epsilon ]
+        
+        y1 = y1[ y2 < self.ylim_p + epsilon ]
+        y2 = y2[ y2 < self.ylim_p + epsilon ]
+        
+        self.y1 = y1
+        self.y2 = y2
+        
+        return
+    
     
     def start(self):
         print 'Click on the plot!!'
@@ -93,7 +118,12 @@ class LSD:
         
         ## Integrating the system
         self.y1, self.y2 = self.solve([event.xdata, event.ydata])
-        self.updateBoundaries()
+        
+        ## Cutting out any part of the solution that doesn't fit the screen
+        self.filterSolution()
+        
+        
+        #self.updateBoundaries()
         self.ax.set_xlim(self.xlim_m, self.xlim_p)
         self.ax.set_ylim(self.ylim_m, self.ylim_p)
 
@@ -107,7 +137,7 @@ class LSD:
         
         # Animating
         ani1 = animation.FuncAnimation(self.fig, self.update_plot,  \
-                                      len( self.y1 ), blit = True, \
+                                      len( self.y1 ), blit = False, \
                                       interval = self.interval, repeat=False )
         
         ## Plotting the initial condition as a small black point
@@ -145,7 +175,7 @@ if __name__=="__main__":
     print '\nLearning Sistemas Dinamicos\n\n'
     
     LSDinst = LSD()
-    LSDinst.setSystem(vanDerPol)
+    LSDinst.setSystem(Pend)
     LSDinst.start()
     
     print '\nThe end, my friend.'
