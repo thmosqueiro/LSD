@@ -17,8 +17,9 @@ Using
 =====
 
 To use it, simply run 
-
+```
 # python LSD.py
+```
 
 It will open a blank plot. Click and watch the animation.
 
