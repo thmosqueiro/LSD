@@ -1,3 +1,7 @@
+# Emacs temporary files and autosaves
+*~
+*#*#
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

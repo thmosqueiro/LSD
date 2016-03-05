@@ -26,10 +26,14 @@ To use it, simply run
 ```
 # python LSD.py
 ```
-
 It will open a blank plot. Click and watch the animation.
 
 ![Example](https://raw.githubusercontent.com/thmosqueiro/LSD/master/example.png)
+
+If you're feeling lost type
+```
+# python LSD.py -h
+```
 
 
 How to install
