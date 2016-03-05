@@ -30,6 +30,16 @@ It will open a blank plot. Click and watch the animation.
 
 ![Example](https://raw.githubusercontent.com/thmosqueiro/LSD/master/example.png)
 
+To change the default dynamical system being simulated, use the flag -d:
+```
+# python LSD.py -d YS
+```
+You can also change the plotting range:
+```
+# python LSD.py -d YS -xmin -7 -xmax 5 -ymin -3 -ymax 7 -np 5
+
+```
+
 If you're feeling lost type
 ```
 # python LSD.py -h
