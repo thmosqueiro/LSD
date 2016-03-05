@@ -20,7 +20,7 @@ with animations.
 
 
 How to use
-=====
+---
 
 To use it, simply run 
 ```
@@ -33,7 +33,7 @@ It will open a blank plot. Click and watch the animation.
 
 
 How to install
-======
+---
 
 LSD is no fancy piece of software: it's simply a small python script
 to handle easy visualization of 2-D dynamical systems. All you need to
@@ -52,6 +52,6 @@ If you're using something else, it should be pretty easy to figure out
 what to do, or else just hit me with a question.
 
 License?
-======
+---
 
 Do whatever you want, don't sue me.
