@@ -8,7 +8,7 @@ start. The idea is to be able to study different kinds of attractors
 and, by changing the system's parameters, visualize simple
 bifurcations. Here is what it looks like:
 
-![Example](https://raw.githubusercontent.com/thmosqueiro/LSD/master/LSDexample.gif)
+![Example](https://raw.githubusercontent.com/thmosqueiro/LSD/master/extra/LSDexample.gif)
 
 It was inspired by lectures from [Prof. Reynaldo
 Pinto](http://neurobiofisica.ifsc.usp.br/) & Prof. [Leonardo
@@ -29,7 +29,7 @@ To use it, simply run
 ```
 It will open a blank plot. Click and watch the animation.
 
-![Example](https://raw.githubusercontent.com/thmosqueiro/LSD/master/example.png)
+![Example](https://raw.githubusercontent.com/thmosqueiro/LSD/master/extra/example.png)
 
 To change the default dynamical system being simulated, use the flag -d:
 ```
