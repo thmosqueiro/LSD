@@ -6,23 +6,24 @@ systems in two dimensions. LSD will let you test several initial
 conditions by clicking on where you want the dynamical system to
 start. The idea is to be able to study different kinds of attractors
 and, by changing the system's parameters, visualize simple
-bifurcations. A possible extension to 3D systems is almost
-straightforward and I plan to implement it in the near future.
+bifurcations. Here is what it looks like:
+
+![Example](https://raw.githubusercontent.com/thmosqueiro/LSD/master/LSDexample.gif)
 
 It was inspired by lectures from [Prof. Reynaldo
 Pinto](http://neurobiofisica.ifsc.usp.br/) & Prof. [Leonardo
-Maia](http://www.ifsc.usp.br/~lpmaia/) at IFSC (USP). The course
-material can be found
-[here](http://www.ifsc.usp.br/~reynaldo/curso_caos/). It uses a linear
-multistep methods to solve the differential equations. To visualize
-the evolution of the dynamical system, I'm simply using matplotlib
-with animations.
+Maia](http://www.ifsc.usp.br/~lpmaia/) at IFSC (USP). The course material can be
+found [here](http://www.ifsc.usp.br/~reynaldo/curso_caos/). It uses a linear
+multistep methods to solve the differential equations. To visualize the
+evolution of the dynamical system, I'm simply using matplotlib with animations.
+A possible extension to 3D systems is almost straightforward and I plan to
+implement it in the near future.
 
 
 How to use
 ---
 
-To use it, simply run 
+To use it, simply run
 ```
 # python LSD.py
 ```
